@@ -2,10 +2,6 @@ name: BuildAndDeploy-stg
 on:
   push:
     branches: [stg]
-    paths:
-      - "src/**"
-      - ".github/**"
-      - "Dockerfile*"
 
 jobs:
   # 构建并推送 Auth 服务镜像
