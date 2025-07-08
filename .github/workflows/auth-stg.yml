@@ -50,7 +50,7 @@ jobs:
 
   # 更新 AWS 服务器上的服务
   update-on-server:
-    needs: [build-and-push-backend]
+    needs: [build-and-push-auth]
     runs-on: ubuntu-latest
     steps:
       - name: Remote SSH Commands
