@@ -1,0 +1,20 @@
+# Put in /opt/tradingflow/auth
+version: "3.8"
+
+services:
+  backend:
+    image: caesarlynch/tradingflow-auth:stg
+    container_name: tradingflow-auth
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    volumes:
+      - ./logs:/app/logs
+    ports:
+      - "4000:4000"
+    networks:
+      - tradingflow-network
+
+networks:
+  tradingflow-network:
+    driver: bridge
